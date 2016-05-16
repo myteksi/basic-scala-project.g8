@@ -29,3 +29,12 @@ javaOptions ++= Seq("-Xms512M", "-Xmx2048M", "-XX:MaxPermSize=2048M", "-XX:+CMSC
 // Disable parallel tests (Required by https://github.com/holdenk/spark-testing-base)
 parallelExecution in Test := false
 
+// Config for building the JAR file
+assemblyMergeStrategy in assembly := {
+  case PathList("META-INF", xs@_*) => MergeStrategy.discard
+  case PathList("javax", "servlet", xs@_*) => MergeStrategy.discard
+  case PathList(ps@_*) if ps.last endsWith ".html" => MergeStrategy.discard
+  case n if n.startsWith("reference.conf") => MergeStrategy.concat
+  case n if n.endsWith(".conf") => MergeStrategy.concat
+  case x => MergeStrategy.first
+}
