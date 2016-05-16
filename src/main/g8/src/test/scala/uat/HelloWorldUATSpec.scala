@@ -1,4 +1,5 @@
-package $organization$.$name.uat;format="lower,word"$
+package $organization$.$name;format="lower,word"$
+package uat
 
 import org.scalatest.FeatureSpec
 
