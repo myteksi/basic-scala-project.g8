@@ -7,9 +7,14 @@ version := "$version$"
 scalaVersion := "2.11.8"
 
 libraryDependencies ++= Seq(
+  "org.apache.spark" %% "spark-core" % "1.6.1" % "provided" withSources() withJavadoc(),
+  "org.apache.spark" %% "spark-sql" % "1.6.1" % "provided" withSources() withJavadoc(),
+  "org.apache.hadoop" % "hadoop-common" % "2.7.2" % "provided" withSources() withJavadoc() excludeAll ExclusionRule(organization = "javax.servlet"),
+
+  "com.databricks" %% "spark-avro" % "2.0.1" withSources() withJavadoc(),
+
   "org.scalatest" %% "scalatest" % "2.2.6" % "test" withSources() withJavadoc(),
   "org.scalacheck" %% "scalacheck" % "1.13.0" % "test" withSources() withJavadoc(),
-
   "org.scala-lang" % "scala-reflect" % "2.11.8" withSources() withJavadoc(),
   "org.scala-lang.modules" % "scala-xml_2.11" % "1.0.4" withSources() withJavadoc(),
 
