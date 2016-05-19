@@ -1,4 +1,4 @@
-package $organization$.$name;format="lower"$
+package $organization$.$name;format="lower,word"$
 
 import com.holdenkarau.spark.testing.SharedSparkContext
 import org.scalatest.FlatSpec

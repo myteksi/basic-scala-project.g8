@@ -35,7 +35,7 @@ javacOptions ++= Seq("-source", "1.7", "-target", "1.7")
 parallelExecution in Test := false
 
 // Set a nicer build name
-assemblyJarName in assembly := s"\${name.value}-with-dependencies.jar"
+assemblyJarName in assembly := s"$name;format="lower,word"$-with-dependencies.jar"
 
 // Check src/main style on compile
 lazy val compileScalastyle = taskKey[Unit]("compileScalastyle")

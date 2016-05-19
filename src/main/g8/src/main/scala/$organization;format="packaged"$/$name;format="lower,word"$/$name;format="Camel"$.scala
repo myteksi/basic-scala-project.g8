@@ -1,4 +1,4 @@
-package $organization$.$name;format="lower"$
+package $organization$.$name;format="lower,word"$
 
 import org.apache.spark.sql.SQLContext
 import org.apache.spark.{SparkConf, SparkContext}
